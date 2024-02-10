@@ -1,0 +1,377 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_alignParentBottom="true"
+    android:background="@color/light"
+    tools:context=".HomeActivity">
+
+    <LinearLayout
+        android:id="@+id/titleBar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:paddingLeft="20dp"
+        android:paddingTop="45dp"
+        android:paddingRight="20dp"
+        android:paddingBottom="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/titleLogo"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:src="@drawable/logo_black" />
+
+        <View
+            android:layout_width="10dp"
+            android:layout_height="50dp" />
+
+        <TextView
+            android:id="@+id/tilteTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:fontFamily="@font/futura_maxi"
+            android:text="@string/app_name"
+            android:textColor="@color/black"
+            android:textSize="25sp" />
+
+        <View
+            android:layout_width="10dp"
+            android:layout_height="50dp" />
+
+        <Button
+            android:id="@+id/aboutBtn"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:background="@drawable/dots_icon"
+            android:textSize="15sp"
+            app:backgroundTint="@null" />
+
+    </LinearLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/body"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/inputContainer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titleBar">
+
+        <LinearLayout
+            android:id="@+id/bodyLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/previewLyt"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/previewTxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:alpha="0.5"
+                    android:fontFamily="@font/proxima_nova"
+                    android:text="Speech preview"
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ScrollView
+                    android:id="@+id/previewContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/radius_white"
+                    android:descendantFocusability="blocksDescendants"
+                    android:fillViewport="true"
+                    android:nestedScrollingEnabled="true"
+                    android:padding="10dp"
+                    android:scrollbarThumbVertical="@color/white"
+                    android:scrollbars="vertical"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/previewTxt">
+
+                    <EditText
+                        android:id="@+id/previewSpeech"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/radius_white"
+                        android:cursorVisible="false"
+                        android:ems="10"
+                        android:focusable="false"
+                        android:fontFamily="@font/futura_maxi"
+                        android:gravity="start|top"
+                        android:inputType="textMultiLine"
+                        android:scrollbars="vertical"
+                        android:textColor="@color/black"
+                        android:textSize="20sp" />
+                </ScrollView>
+
+                <LinearLayout
+                    android:id="@+id/previewCntrl"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/previewContainer">
+
+                    <Button
+                        android:id="@+id/uploadBtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="90"
+                        android:background="@drawable/radius_white"
+                        android:fontFamily="@font/futura_maxi"
+                        android:onClick="upload"
+                        android:text="Upload"
+                        android:textColor="@color/black"
+                        android:textSize="15sp"
+                        app:backgroundTint="@null" />
+
+                    <View
+                        android:layout_width="10dp"
+                        android:layout_height="50dp"
+                        android:layout_weight="1" />
+
+                    <Button
+                        android:id="@+id/downloadBtn"
+                        android:layout_width="75dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/radius_red"
+                        android:onClick="download"
+                        android:paddingLeft="28dp"
+                        app:backgroundTint="@null"
+                        app:icon="@drawable/download_icon"
+                        app:iconTint="@color/white" />
+
+                    <View
+                        android:layout_width="10dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1" />
+
+                    <Button
+                        android:id="@+id/playBtn"
+                        android:layout_width="75dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/radius_red"
+                        android:onClick="speak"
+                        android:paddingLeft="28dp"
+                        app:backgroundTint="@null"
+                        app:icon="@drawable/play_icon"
+                        app:iconTint="@color/white" />
+                </LinearLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:layout_weight="1" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/settingsLyt"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/settingsTxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:alpha="0.5"
+                    android:fontFamily="@font/proxima_nova"
+                    android:text="Adjustment settings"
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <LinearLayout
+                    android:id="@+id/pitchCtrl"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/radius_white"
+                    android:orientation="vertical"
+                    android:padding="10dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/settingsTxt">
+
+                    <TextView
+                        android:id="@+id/pitchTxt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/futura_maxi"
+                        android:text="Adjust pitch"
+                        android:textColor="@color/black"
+                        android:textSize="15sp" />
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="10dp"
+                        android:layout_weight="1" />
+
+                    <SeekBar
+                        android:id="@+id/pitch"
+                        android:layout_width="match_parent"
+                        android:layout_height="20dp"
+                        android:layout_weight="1"
+                        android:paddingTop="5dp"
+                        android:paddingBottom="5dp"
+                        android:progress="75"
+                        android:progressDrawable="@drawable/custom_seekbar"
+                        android:progressTint="@color/primary"
+                        android:thumb="@drawable/custom_seekthumb" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/speedCtrl"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/radius_white"
+                    android:orientation="vertical"
+                    android:padding="10dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/pitchCtrl">
+
+                    <TextView
+                        android:id="@+id/speedTxt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/futura_maxi"
+                        android:text="Adjust speed"
+                        android:textColor="@color/black"
+                        android:textSize="15sp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="10dp"
+                        android:layout_weight="1" />
+
+                    <SeekBar
+                        android:id="@+id/speed"
+                        android:layout_width="match_parent"
+                        android:layout_height="20dp"
+                        android:layout_weight="1"
+                        android:paddingTop="5dp"
+                        android:paddingBottom="5dp"
+                        android:progress="50"
+                        android:progressDrawable="@drawable/custom_seekbar"
+                        android:progressTint="@color/primary"
+                        android:thumb="@drawable/custom_seekthumb" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/volumeCtrl"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/radius_white"
+                    android:orientation="vertical"
+                    android:padding="10dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/speedCtrl">
+
+                    <TextView
+                        android:id="@+id/volumeTxt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/futura_maxi"
+                        android:text="Adjust volume"
+                        android:textColor="@color/black"
+                        android:textSize="15sp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="10dp"
+                        android:layout_weight="1" />
+
+                    <SeekBar
+                        android:id="@+id/volume"
+                        android:layout_width="match_parent"
+                        android:layout_height="20dp"
+                        android:layout_weight="1"
+                        android:paddingTop="5dp"
+                        android:paddingBottom="5dp"
+                        android:progress="100"
+                        android:progressDrawable="@drawable/custom_seekbar"
+                        android:progressTint="@color/primary"
+                        android:thumb="@drawable/custom_seekthumb" />
+                </LinearLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <LinearLayout
+        android:id="@+id/inputContainer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:paddingLeft="20dp"
+        android:paddingTop="20dp"
+        android:paddingRight="20dp"
+        android:paddingBottom="35dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <EditText
+            android:id="@+id/inputTxt"
+            android:layout_width="308dp"
+            android:layout_height="40dp"
+            android:layout_weight="90"
+            android:background="@drawable/radius_gray"
+            android:fontFamily="@font/proxima_nova"
+            android:hint="Write it out..."
+            android:inputType="text"
+            android:padding="10dp"
+            android:textColor="@color/black"
+            android:textColorHint="@color/alpha"
+            android:textSize="15sp" />
+
+        <View
+            android:layout_width="10dp"
+            android:layout_height="40dp"
+            android:layout_weight="1" />
+
+        <Button
+            android:id="@+id/inputBtn"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/send_icon_fill"
+            android:onClick="sendText"
+            android:textSize="15sp" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

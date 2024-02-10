@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bottom_sheet"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:paddingTop="20dp"
+    android:paddingLeft="20dp"
+    android:paddingRight="20dp"
+    android:paddingBottom="35dp">
+
+    <TextView
+        android:id="@+id/downloadTxt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        android:fontFamily="@font/futura_maxi"
+        android:gravity="center"
+        android:text="Download"
+        android:textColor="@color/black"
+        android:textSize="15sp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:layout_weight="0" />
+
+    <EditText
+        android:id="@+id/filename"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_weight="0"
+        android:background="@drawable/radius_gray"
+        android:hint="Enter Filename..."
+        android:inputType="text"
+        android:padding="10dp"
+        android:textColor="@color/black"
+        android:textColorHint="@color/alpha"
+        android:textSize="15sp"
+        android:fontFamily="@font/proxima_nova" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:layout_weight="0" />
+
+    <Button
+        android:id="@+id/saveMP3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        android:background="@drawable/radius_red"
+        android:fontFamily="@font/futura_maxi"
+        android:text="Save to MP3"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        app:backgroundTint="@null" />
+</LinearLayout>

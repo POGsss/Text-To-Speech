@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">TikTalk</string>
+
+    <!--Slide Title-->
+    <string name="title_one">Write it out</string>
+    <string name="title_two">PDF conversion</string>
+    <string name="title_three">Experience TikTalk</string>
+
+    <!--Slide Description-->
+    <string name="description_one">Write your text, and let our advanced algorithms transform your written words into spoken language.</string>
+    <string name="description_two">Convert your PDFs into speech by uploading them to our app. Giving voice to your documents.</string>
+    <string name="description_three">Witnessed the magic as we turn any text into lifelike speech. Use TikTalk and make your text talk.</string>
+
+    <!--About The App-->
+    <string name="about_app">This app allows you to effortlessly convert text into speech. Offering a seamless experience with customizable features.</string>
+    <string name="key_feature">- Easy text-to-speech conversion\n- Upload and convert PDF files\n- Customize pitch, speed, and volume\n- Save speech as MP3 files</string>
+    <string name="about_dev">Made with Love, by Frankie B. Pinat.</string>
+</resources>
