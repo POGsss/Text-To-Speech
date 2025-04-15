@@ -23,14 +23,14 @@
 
         <ImageView
             android:id="@+id/titleLogo"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
             android:layout_gravity="center"
             android:src="@drawable/logo_black" />
 
         <View
             android:layout_width="10dp"
-            android:layout_height="50dp" />
+            android:layout_height="60dp" />
 
         <TextView
             android:id="@+id/tilteTxt"
@@ -45,14 +45,14 @@
 
         <View
             android:layout_width="10dp"
-            android:layout_height="50dp" />
+            android:layout_height="60dp" />
 
         <Button
             android:id="@+id/aboutBtn"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
             android:layout_gravity="center"
-            android:background="@drawable/dots_icon"
+            android:background="@drawable/baseline_info_outline_24"
             android:textSize="15sp"
             app:backgroundTint="@null" />
 
@@ -332,7 +332,7 @@
 
     <LinearLayout
         android:id="@+id/inputContainer"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/white"
         android:orientation="horizontal"
@@ -369,7 +369,6 @@
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:background="@drawable/send_icon_fill"
-            android:onClick="sendText"
             android:textSize="15sp" />
 
     </LinearLayout>
